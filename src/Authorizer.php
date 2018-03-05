@@ -98,6 +98,8 @@ class Authorizer
      */
     public function getAccessToken()
     {
+        $this->getChecker()->isValidRequest(true);
+
         $accessToken = $this->getChecker()->getAccessToken();
 
         if (is_null($accessToken)) {
