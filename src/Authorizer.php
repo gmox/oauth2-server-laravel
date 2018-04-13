@@ -264,6 +264,8 @@ class Authorizer
      */
     public function getResourceOwnerId()
     {
+        $this->getChecker()->isValidRequest(true);
+        
         return $this->getAccessToken()->getSession()->getOwnerId();
     }
 
